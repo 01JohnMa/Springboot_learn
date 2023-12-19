@@ -13,3 +13,8 @@
 后，最近在 某个表中增加一个同名字段，在预发布环境做数据库变更后，线上查询语句出现出
 1052 异常：Column 'name' in field list is ambiguous。
 总结：连接 n个表,至少需要n-1个连接条件。比如，连接三个表，至少需要两个连接条件。(where)
+
+😁
+可以使用GROUP BY子句将表中的数据分成若干组
+明确：WHERE一定放在FROM后面
+在SELECT列表中所有未包含在组函数中的列都应该包含在 GROUP BY子句中，where
