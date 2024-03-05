@@ -1,6 +1,3 @@
-def add(a,b):
-    return a+b
-a = 1
-b = 2
-c = add(a,b)
-print(c)
+a = (1,2323,232,4)
+for  i  in range(len(a)):
+    print(a[i-1])
