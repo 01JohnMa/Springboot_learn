@@ -1,3 +1,4 @@
+
 ### re是否有用过（Python正则匹配包），如何匹配空格
 
 ```python
@@ -27,6 +28,7 @@ compile函数用于编译正则表达式，生成一个正则表达式（ Patter
 ```
 
 ### 自己写好的Python包如何给别人使用，需要怎么配置
+
 1、新建一个文件夹
 2、建立一个包，写核心代码
 3、写setup.py文件
@@ -40,6 +42,7 @@ compile函数用于编译正则表达式，生成一个正则表达式（ Patter
 5、使用包
 from mywheel.eample import fun
 6、上传pypi
+
 ### 元组长度可变吗，如何定义一个长度为1的元组，如何对元组进行迭代
 
 ```python
@@ -53,7 +56,9 @@ for i range(len(a))
 # 4、元组也可以使用+操作符进行拼接。
       
   ```
+
 ### 将py文件打包成可执行的.exe文件
+
 pyinstaller -i ico.png -F -w demo.py
 -i 指定打包文件的图标
 -F dist目录只生成一个exe文件
@@ -64,5 +69,21 @@ pyinstaller -i ico.png -F -w demo.py
 - raise 引发异常
 - 处理异常 捕获异常进行处理
 - 最终快 final执行所有操作之后的异常处理
-  
 
+### Python装饰类
+
+在不改变原函数的前提下，增加函数的的功能
+例如
+
+```python
+def saylocal(func):
+  def wrapper():
+    curTime = func()
+    return f'当地时间 {curTime}'
+  return wrapper
+@sayLocal#相当于 getXXXtime = sayLocal(getXXXtime)
+def getXXXTime():
+  time.strftime("%Y_%m_%d %H%M%S",time.localtime())
+
+
+```
