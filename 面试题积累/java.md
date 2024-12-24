@@ -74,3 +74,58 @@ StudentID | ClubName | ActivityDate
 俱乐部活动表（ClubActivity）:
   俱乐部名称（ClubName）
   活动日期（ActivityDate）
+ 
+### 二叉树遍历
+``` java
+  public class solotion {
+    public static void main(String[] args) {
+        TreeNode nodeA = new TreeNode("A");
+        TreeNode nodeB = new TreeNode("B");
+        TreeNode nodeC = new TreeNode("C");
+        TreeNode nodeD = new TreeNode("D");
+        TreeNode nodeE = new TreeNode("E");
+        TreeNode nodeF = new TreeNode("F");
+        TreeNode nodeG = new TreeNode("G");
+
+        nodeA.left = nodeB;
+        nodeA.right = nodeC;
+        nodeB.left = nodeD;
+        nodeB.right = nodeE;
+        nodeC.left = nodeG;
+        nodeC.right = nodeF;
+        midorder(nodeA);
+    }
+
+    // bianary-tree结构
+    public static class TreeNode {
+        String val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(String val) {
+            this.val = val;
+        }
+    }
+
+    // 前序遍历
+    public static void preorder(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(node.val);
+        preorder(node.left);
+        preorder(node.right);
+    }
+
+    // 中序遍历
+    public static void midorder(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        midorder(node.left);
+        System.out.println(node.val);
+        midorder(node.right);
+    }
+}
+```
+
+
